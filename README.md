@@ -38,5 +38,44 @@ int main() {
 
 
 2ND APPROACH WHERE YOU SEE MORE KEY VALUE THERE OR NOT.
+#include <stdio.h>
+
+void searchElement(int *arr, int size, int key) {
+    int f=0;
+    printf("Occurrences of element %d at indices: ", key);
+    for (int i = 0; i < size; i++) {
+        if (*(arr + i) == key) {
+            printf("%d ", i);
+            f = 1;
+        }
+    }
+    if (!f) {
+        printf("Element %d not found in the array.\n", key);
+    } 
+    else {
+        printf("\n");
+    }
+}
+
+int main() {
+    int size;
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+    int arr[size];
+    printf("Enter the elements of array:\n");
+    for (int i=0;i<size;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    int key;
+
+    printf("Enter the element to search: ");
+    scanf("%d", &key);
+
+    searchElement(arr, size, key);
+
+
+    return 0;
+}
 
 
