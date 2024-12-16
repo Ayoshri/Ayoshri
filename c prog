@@ -1,0 +1,30 @@
+TAKING INPUT FROM USER NO OF STUDENT AND NO OF SUBJECTS AND DISPLAYING THEIR TOTAL MARKS WITHOUT USING ARRAY.
+
+#include<stdio.h>
+
+void main() {
+    int n, m, i, j, roll_number, marks, total;
+
+    // Getting number of students and subjects
+    printf("Enter number of students and subjects: ");
+    scanf("%d%d", &n, &m);
+
+    // Loop over all students
+    for(i = 1; i <= n; ++i) {
+        // Getting roll number for each student
+        printf("Enter roll number: ");
+        scanf("%d", &roll_number);
+
+        total = 0; // Resetting total for each student
+
+        // Getting marks for each subject
+        printf("Enter marks of %d subjects for ROLL NO %d:\n", m, roll_number);
+        for(j = 1; j <= m; j++) {
+            scanf("%d", &marks);  // Scanning marks for each subject
+            total = total + marks; // Adding marks to total
+        }
+
+        // Printing total marks for the student
+        printf("TOTAL MARKS for ROLL NO %d = %d\n", roll_number, total);
+    }
+}
